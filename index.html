@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimrod T. Palomar III - Cybersecurity Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div class="background-grid"></div>
+    <div class="scanline"></div>
+
+    <!-- SLIDE PANEL OVERLAY -->
+    <div class="panel-overlay" id="panelOverlay" onclick="closePanel()"></div>
+
+    <!-- SLIDE PANEL -->
+    <div class="slide-panel" id="slidePanel">
+        <div class="panel-header">
+            <span class="panel-header-title" id="panelTitle">All Items</span>
+            <button class="panel-close-btn" onclick="closePanel()">✕ Close</button>
+        </div>
+        <div class="panel-body" id="panelBody"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <h1 data-text="NIMROD T. PALOMAR III">NIMROD T. PALOMAR III</h1>
+        <div class="subtitle">BS CYBERSECURITY<span class="typing-cursor"></span></div>
+        <p class="hero-bio">From web development to web exploitation. Years of cybersecurity training through CTFs, Discord collaborations, and hands-on hacking. Breaking systems to build better defenses.</p>
+        <div class="hero-links">
+            <a href="https://www.linkedin.com/in/nimrod-third-palomar-714197346/" target="_blank" class="hero-link"><span>LinkedIn</span></a>
+            <a href="https://discord.com/users/1512657930116399116" target="_blank" class="hero-link"><span>Discord</span></a>
+            <a href="https://www.instagram.com/0xyazu/" class="hero-link"><span>Instagram</span></a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ORIGIN -->
+        <section class="section">
+            <h2>Origin Story</h2>
+            <p class="story-text">
+                Back in 2023, I was an IT student at STI Munoz EDSA, developing websites as usual — creating databases, designing interfaces, and building systems. Until I discovered vulnerabilities that could tear those systems down. From that experience, I became more interested in breaking and fixing systems. For the past 6 months, I've been grinding and studying offensive security. I've learned Social Engineering, Network utilities, Reconnaissance tools, Forensics tools, and Web hacking — all through CTFs, Discord server collaborations, and understanding the root causes of how vulnerabilities work.
+            </p>
+        </section>
+
+        <!-- CYBERSECURITY ARSENAL -->
+        <section class="section">
+            <h2>Cybersecurity SKILL</h2>
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <h3>Reconnaissance & Enumeration</h3>
+                    <ul>
+                        <li>Nmap (Network Scanning & Service Discovery)</li>
+                        <li>Gobuster (Directory & File Brute-Forcing)</li>
+                        <li>FFUF (Web Fuzzing & Parameter Discovery)</li>
+                        <li>WPScan (WordPress Vulnerability Enumeration)</li>
+                        <li>hping3 (Packet Crafting & Firewall Testing)</li>
+                        <li>Wayback Machine (Archived Documents)</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Web Application Testing</h3>
+                    <ul>
+                        <li>Burp Suite (Proxy Interception & Manual Exploitation)</li>
+                        <li>Cross-Site Scripting (Reflected, Stored, DOM-Based)</li>
+                        <li>Path Traversal</li>
+                        <li>OS Command</li>
+                        <li>Backdoor Vulnerabilities</li>
+                        <li>CORS</li>
+                        <li>Clickjacking</li>
+                        <li>JSON Web Tokens</li>
+                        <li>2FA Bypass</li>
+                        <li>SSRF & CSRF</li>
+                        <li>SQL Injection (Manual & Automated Payload Injection)</li>
+                        <li>Parameter Manipulation & IDOR Testing</li>
+                        <li>Session Hijacking & Cookie Tampering</li>
+                        <li>File Vulnerabilities</li>
+                        <li>XXE Exploit</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Authentication & Exploitation</h3>
+                    <ul>
+                        <li>Hydra (Network Protocol Brute-Forcing - SSH, RDP, FTP)</li>
+                        <li>Burp Intruder (Web Login Brute-Forcing)</li>
+                        <li>Reverse Shell Payload Generation</li>
+                        <li>Privilege Escalation Enumeration (Linux/Windows)</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Post-Exploitation & Persistence</h3>
+                    <ul>
+                        <li>njRAT (Remote Access / C2 Simulation - Lab Only)</li>
+                        <li>Persistence Mechanism Deployment</li>
+                        <li>Lateral Movement Techniques</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Wireless & Specialty Auditing</h3>
+                    <ul>
+                        <li>Wifite (Automated Wireless Handshake Capture & WPA/WPA2 Cracking)</li>
+                        <li>De-Authentication Attack Execution (ESP8266)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEV SKILLS -->
+        <section class="section">
+            <h2>Development Skills</h2>
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <h3>Frontend Development</h3>
+                    <ul>
+                        <li>PHP (Frontend Category)</li>
+                        <li>Tailwind CSS</li>
+                        <li>ReactJS</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Backend Development</h3>
+                    <ul>
+                        <li>SQL Database</li>
+                        <li>Laravel</li>
+                        <li>Python (Flask)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATES -->
+        <section class="section" id="certificates-section">
+            <h2>Certificates</h2>
+            <div class="preview-grid" id="certPreviewGrid"></div>
+            <div class="view-more-row">
+                <button class="view-more-btn" onclick="openPanel('certs')">
+                    <span>View All Certificates &rarr;</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="section" id="projects-section">
+            <h2>Projects & Events</h2>
+            <div class="preview-grid" id="projPreviewGrid"></div>
+            <div class="view-more-row">
+                <button class="view-more-btn" onclick="openPanel('projects')">
+                    <span>View All Projects &rarr;</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section contact-section">
+            <h2>Establish Connection</h2>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/nimrod-third-palomar-714197346/" target="_blank" class="contact-link"><span>LinkedIn</span></a>
+                <a href="https://discord.com/users/1512657930116399116" target="_blank" class="contact-link"><span>Discord</span></a>
+                <a href="https://www.instagram.com/0xyazu/" class="contact-link"><span>Instagram</span></a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Nimrod T. Palomar III | Cybersecurity Enthusiast | All Rights Reserved</p>
+        <p style="margin-top: 0.5rem; opacity: 0.5;">System Status: Online | Security Level: Pre-intermediate</p>
+    </footer>
+
+    <script src="assets/scripts/script.js"></script>
+</body>
+</html>

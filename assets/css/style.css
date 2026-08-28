@@ -230,6 +230,7 @@ h3::before { content: '# '; color: var(--white); }
     gap: 2rem;
     margin-top: 2rem;
 }
+
 .skill-card {
     background: linear-gradient(135deg, rgba(45,45,45,0.5) 0%, rgba(13,13,13,0.8) 100%);
     border: 1px solid var(--white);
@@ -238,7 +239,9 @@ h3::before { content: '# '; color: var(--white); }
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    cursor: default; /* Card itself isn't clickable, only the header */
 }
+
 .skill-card::before {
     content: '';
     position: absolute;
@@ -247,24 +250,117 @@ h3::before { content: '# '; color: var(--white); }
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
     transition: left 0.5s ease;
 }
+
 .skill-card:hover::before { left: 100%; }
+
 .skill-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(255,255,255,0.2), inset 0 0 20px rgba(255,255,255,0.05);
     border-color: var(--gray);
 }
-.skill-card h3 { margin-top: 0; font-size: 1.3rem; }
-ul { list-style: none; padding-left: 0; }
-li {
+
+/* ----- NEW: Clickable Header Styles ----- */
+.card-toggle {
+    margin-top: 0;
+    font-size: 1.3rem;
+    cursor: pointer;
+    user-select: none; /* Prevents text highlighting when clicking */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+    z-index: 1; /* Keeps header above the ::before shine effect */
+}
+
+.card-toggle:hover {
+    color: var(--white);
+}
+
+/* The arrow indicator */
+.arrow {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    font-size: 0.8em;
+    color: var(--gray);
+    margin-left: 10px;
+    flex-shrink: 0; /* Prevents arrow from shrinking */
+}
+
+/* Rotate arrow when active */
+.skill-card.active .arrow {
+    transform: rotate(180deg);
+    color: var(--white);
+}
+
+/* ----- NEW: Dropdown List Styles ----- */
+.skill-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    max-height: 0; /* Hidden by default */
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.4s ease,
+                margin 0.3s ease;
+    opacity: 0;
+}
+
+/* When card is active (clicked), show the list */
+.skill-card.active .skill-list {
+    max-height: 1500px; /* Large enough for your longest list */
+    opacity: 1;
+    margin-top: 1.5rem;
+}
+
+/* Individual list items - keep your original styling */
+.skill-list li {
     padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
     color: var(--gray);
     transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-li::before { content: '▸'; position: absolute; left: 0; color: var(--white); font-size: 1.2rem; }
-li:hover { color: var(--white); padding-left: 2rem; }
-li:hover::before { content: '►'; }
+
+.skill-list li:last-child {
+    border-bottom: none;
+}
+
+.skill-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--white);
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+}
+
+.skill-list li:hover {
+    color: var(--white);
+    padding-left: 2rem;
+}
+
+.skill-list li:hover::before {
+    content: '►';
+}
+
+/* ----- OPTIONAL: Add a subtle indicator that cards are clickable ----- */
+.skill-card .card-toggle::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--white);
+    transition: width 0.3s ease;
+}
+
+.skill-card .card-toggle:hover::after {
+    width: 100%;
+}
 
 /* ─── CERTIFICATES & PROJECTS: 4-PREVIEW GRID ─── */
 .preview-grid {

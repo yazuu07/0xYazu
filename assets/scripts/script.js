@@ -1,7 +1,9 @@
+
  /* ── DATA ── */
  const certs = [
     { title: "2nd Place — BlackHat USA CTF 2025",    issuer: "BugCrowd",        date: "2025", img: "assets/images/certificates/bugcrowd.jpg" },
     { title: "VIGI Certified Security Administrator (VCSA)",            issuer: "VIGI",          date: "2026", img: "assets/images/certificates/Vigi.png" },
+    { title: "IT Helpdesk Certificate ",            issuer: "HelpDesk Simulator",          date: "2026", img: "assets/images/certificates/helpdesk.png" },
     { title: "42nd Place — Cor CTF 2025",            issuer: "Cor",              date: "2025", img: "assets/images/certificates/Cor.jpg" },
     { title: "59th Place — LA CTF 2026",             issuer: "LACTF",            date: "2026", img: "assets/images/certificates/LACTF.jpg" },
     { title: "Java Developing Certificate",           issuer: "Sololearn",        date: "2024", img: "assets/images/certificates/Java (1).jpg" },
@@ -12,6 +14,7 @@
     { title: "Vibe Coding Certificate",               issuer: "CISTEM & UNILAB", date: "2025", img: "assets/images/certificates/Vibe Coding_certificate (1).jpg" },
     { title: "C++ Essentials Certificate",            issuer: "NetAcad",          date: "2026", img: "assets/images/certificates/c-essentials-1.png" },
     { title: "STEM EXPO 2024",                        issuer: "CISTEM & UNILAB", date: "2024", img: "assets/images/certificates/STEM EXPO 2024 (1).jpg" },
+    { title: "SQL Certificate",                        issuer: "Sololearn", date: "2026", img: "assets/images/certificates/SQL.jpg" },
     { title: "50th Place — BDSec CTF 2025",          issuer: "BDSec",            date: "2025", img: "assets/images/certificates/BDSec CTF 2025 (1).png" },
 ];
 
@@ -20,6 +23,7 @@ const projects = [
     { title: "Representative of WolrdSkills Philippines",   desc: "WorldSkills Philippines in Cybersecurity, we do real life hunting of bugs and bypasses", img: "assets/images/projects/worldskills.jpg"},
     { title: "AI-Based Phishing Email Analyzer",   desc: "This is a phishing analyzer that calculates of an email is suspicious and also intgrated with AI sumarization for efficient use for non-technical users.", img: 'assets/images/projects/phish.jpg', url: 'https://github.com/yazuu07/phishing-analyzer.git'},
     { title: "ReconSuite",   desc: "A URL reconnaissance detector to check vulnerabilities of a website. The tools are combination of all reconnaissance tools FFUF, WPScan, OSINT Search, and DNS Enumeration", img: "assets/images/projects/Recon.jpg", url: "https://github.com/yazuu07/ReconSuite.git"},
+    { title: "A-Project", desc: "A lovestory driven game with conditional decisions", img: "assets/images/projects/A-project.png", url: "https://project-a-eta-two.vercel.app/"},
     { title: "Attendance Monitoring System",   desc: "Attendance System for Systech Integrations Inc. for their EXPO 2026", img: 'assets/images/projects/systech.jpg'},
     { title: "HI JSpider Tool",                 desc: "A tool to discover hidden APIs. I handled the full frontend build.",         img: "assets/images/projects/jspider.png",     url: "https://jspider.hiddeninvestigations.net/" },
     { title: "Ollama-based speach detector as Dr. Trayaurus",   desc: "Dr. Trayaurus is a fictional character in DanTDM's youtube videos, made spcifically for speech recognition pattern and answers freely like a common AI", img: "assets/images/projects/tray.jpg"},
@@ -56,6 +60,7 @@ function buildPreviews() {
             </div>`;
     });
 }
+
 
 /* ── PANEL LOGIC ── */
 function openPanel(type) {

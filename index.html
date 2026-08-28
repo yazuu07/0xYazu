@@ -42,7 +42,7 @@
         <section class="section">
             <h2>Origin Story</h2>
             <p class="story-text">
-                Back in 2023, I was an IT student at STI Munoz EDSA, developing websites as usual — creating databases, designing interfaces, and building systems. Until I discovered vulnerabilities that could tear those systems down. From that experience, I became more interested in breaking and fixing systems. For the past 6 months, I've been grinding and studying offensive security. I've learned Social Engineering, Network utilities, Reconnaissance tools, Forensics tools, and Web hacking — all through CTFs, Discord server collaborations, and understanding the root causes of how vulnerabilities work.
+                Back in 2023, I was an IT student at STI Munoz EDSA, developing websites as usual — creating databases, designing interfaces, and building systems. Until I discovered vulnerabilities that could tear those systems down. From that experience, I became more interested in breaking and fixing systems. Since 2025, I've been grinding and studying offensive security and defensive security all through CTFs, Discord server collaborations, and understanding the root causes of how vulnerabilities work.
             </p>
         </section>
 
@@ -50,61 +50,97 @@
         <section class="section">
             <h2>Cybersecurity SKILL</h2>
             <div class="skill-grid">
+                
+                <!-- CARD 1: Reconnaissance & Enumeration -->
                 <div class="skill-card">
-                    <h3>Reconnaissance & Enumeration</h3>
-                    <ul>
-                        <li>Nmap (Network Scanning & Service Discovery)</li>
-                        <li>Gobuster (Directory & File Brute-Forcing)</li>
-                        <li>FFUF (Web Fuzzing & Parameter Discovery)</li>
-                        <li>WPScan (WordPress Vulnerability Enumeration)</li>
-                        <li>hping3 (Packet Crafting & Firewall Testing)</li>
-                        <li>Wayback Machine (Archived Documents)</li>
+                    <h3 class="card-toggle">
+                        Reconnaissance &amp; Enumeration
+                        <span class="arrow">▼</span>
+                    </h3>
+                    <ul class="skill-list">
+                        <li><strong>Network Scanning:</strong> Nmap (port/service discovery, OS fingerprinting)</li>
+                        <li><strong>Web Enumeration:</strong> Gobuster (directory/file brute-forcing)</li>
+                        <li><strong>Web Fuzzing:</strong> FFUF (parameter discovery, endpoint fuzzing)</li>
+                        <li><strong>WordPress Auditing:</strong> WPScan (vulnerability enumeration)</li>
+                        <li><strong>DNS Recon:</strong> nslookup, dig (DNS record enumeration)</li>
+                        <li><strong>Vulnerability Scanning:</strong> Nuclei (template-based scanning)</li>
+                        <li><strong>OSINT:</strong> Wayback Machine (archived content retrieval)</li>
                     </ul>
                 </div>
+        
+                <!-- CARD 2: Web Application Penetration -->
                 <div class="skill-card">
-                    <h3>Web Application Testing</h3>
-                    <ul>
-                        <li>Burp Suite (Proxy Interception & Manual Exploitation)</li>
-                        <li>Cross-Site Scripting (Reflected, Stored, DOM-Based)</li>
-                        <li>Path Traversal</li>
-                        <li>OS Command</li>
-                        <li>Backdoor Vulnerabilities</li>
-                        <li>CORS</li>
-                        <li>Clickjacking</li>
-                        <li>JSON Web Tokens</li>
-                        <li>2FA Bypass</li>
-                        <li>SSRF & CSRF</li>
-                        <li>SQL Injection (Manual & Automated Payload Injection)</li>
-                        <li>Parameter Manipulation & IDOR Testing</li>
-                        <li>Session Hijacking & Cookie Tampering</li>
-                        <li>File Vulnerabilities</li>
-                        <li>XXE Exploit</li>
+                    <h3 class="card-toggle">
+                        Web Application Penetration
+                        <span class="arrow">▼</span>
+                    </h3>
+                    <ul class="skill-list">
+                        <li><strong>Manual Testing:</strong> Burp Suite (interception, repeater, decoder)</li>
+                        <li><strong>OWASP Top 10 Vulnerabilities:</strong></li>
+                        <ul style="list-style: none; padding-left: 2rem; margin: 0.3rem 0;">
+                            <li>• SQL Injection (manual &amp; automated)</li>
+                            <li>• Cross-Site Scripting (Reflected, Stored, DOM)</li>
+                            <li>• CSRF &amp; SSRF</li>
+                            <li>• IDOR &amp; Parameter Manipulation</li>
+                            <li>• Path Traversal &amp; File Inclusion</li>
+                            <li>• OS Command Injection</li>
+                        </ul>
+                        <li><strong>Security Misconfigurations:</strong></li>
+                        <ul style="list-style: none; padding-left: 2rem; margin: 0.3rem 0;">
+                            <li>• CORS misconfiguration</li>
+                            <li>• Clickjacking (X-Frame-Options bypass)</li>
+                            <li>• Session Hijacking &amp; Cookie Tampering</li>
+                        </ul>
+                        <li><strong>Authentication Testing:</strong></li>
+                        <ul style="list-style: none; padding-left: 2rem; margin: 0.3rem 0;">
+                            <li>• JWT testing &amp; manipulation</li>
+                            <li>• 2FA bypass techniques</li>
+                        </ul>
+                        <li><strong>Advanced Exploits:</strong> XXE (XML External Entity) Injection</li>
                     </ul>
                 </div>
+        
+                <!-- CARD 3: Exploitation & Post-Exploitation -->
                 <div class="skill-card">
-                    <h3>Authentication & Exploitation</h3>
-                    <ul>
-                        <li>Hydra (Network Protocol Brute-Forcing - SSH, RDP, FTP)</li>
-                        <li>Burp Intruder (Web Login Brute-Forcing)</li>
-                        <li>Reverse Shell Payload Generation</li>
-                        <li>Privilege Escalation Enumeration (Linux/Windows)</li>
+                    <h3 class="card-toggle">
+                        Exploitation &amp; Post-Exploitation
+                        <span class="arrow">▼</span>
+                    </h3>
+                    <ul class="skill-list">
+                        <li><strong>Credential Attacks:</strong> Hydra (SSH, RDP, FTP brute-forcing)</li>
+                        <li><strong>Web Login Attacks:</strong> Burp Intruder (dictionary/brute-force)</li>
+                        <li><strong>Framework Knowledge:</strong></li>
+                        <ul style="list-style: none; padding-left: 2rem; margin: 0.3rem 0;">
+                            <li>• Metasploit (basic exploit modules &amp; payloads)</li>
+                            <li>• Reverse TCP payloads (staged/non-staged)</li>
+                            <li>• Meterpreter session management</li>
+                        </ul>
+                        <li><strong>Post-Exploitation:</strong></li>
+                        <ul style="list-style: none; padding-left: 2rem; margin: 0.3rem 0;">
+                            <li>• Lateral Movement (basic techniques)</li>
+                            <li>• C2 Simulation (njRAT - lab environment only)</li>
+                        </ul>
                     </ul>
                 </div>
+        
+                <!-- CARD 4: Wireless & Network Auditing -->
                 <div class="skill-card">
-                    <h3>Post-Exploitation & Persistence</h3>
-                    <ul>
-                        <li>njRAT (Remote Access / C2 Simulation - Lab Only)</li>
-                        <li>Persistence Mechanism Deployment</li>
-                        <li>Lateral Movement Techniques</li>
+                    <h3 class="card-toggle">
+                        Wireless &amp; Network Auditing
+                        <span class="arrow">▼</span>
+                    </h3>
+                    <ul class="skill-list">
+                        <li><strong>Wi-Fi Auditing:</strong></li>
+                        <ul style="list-style: none; padding-left: 2rem; margin: 0.3rem 0;">
+                            <li>• Wifite (automated WPA/WPA2 handshake capture)</li>
+                            <li>• Airmon-ng (monitor mode, packet injection)</li>
+                            <li>• De-authentication attacks (ESP8266 hardware)</li>
+                            <li>• Airgeddon attack (GitHub Repo Tool)</li>
+                        </ul>
+                        <li><strong>Network Manipulation:</strong> Bettercap (ARP spoofing, MITM, packet crafting)</li>
                     </ul>
                 </div>
-                <div class="skill-card">
-                    <h3>Wireless & Specialty Auditing</h3>
-                    <ul>
-                        <li>Wifite (Automated Wireless Handshake Capture & WPA/WPA2 Cracking)</li>
-                        <li>De-Authentication Attack Execution (ESP8266)</li>
-                    </ul>
-                </div>
+        
             </div>
         </section>
 
@@ -118,14 +154,16 @@
                         <li>PHP (Frontend Category)</li>
                         <li>Tailwind CSS</li>
                         <li>ReactJS</li>
+                        <li>Typescript</li>
                     </ul>
                 </div>
                 <div class="skill-card">
                     <h3>Backend Development</h3>
                     <ul>
-                        <li>SQL Database</li>
+                        <li>Xampp</li>
                         <li>Laravel</li>
                         <li>Python (Flask)</li>
+                        <li>Supabase</li>
                     </ul>
                 </div>
             </div>
@@ -167,7 +205,19 @@
         <p>&copy; 2026 Nimrod T. Palomar III | Cybersecurity Enthusiast | All Rights Reserved</p>
         <p style="margin-top: 0.5rem; opacity: 0.5;">System Status: Online | Security Level: Pre-intermediate</p>
     </footer>
+    <script>
+        const cards = document.querySelectorAll('.skill-card');
 
+cards.forEach(card => {
+    const toggleHeader = card.querySelector('.card-toggle');
+    
+    toggleHeader.addEventListener('click', function(e) {
+        e.stopPropagation();
+        card.classList.toggle('active');
+    });
+});
+
+    </script>
     <script src="assets/scripts/script.js"></script>
 </body>
 </html>

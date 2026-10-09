@@ -1,6 +1,5 @@
-
- /* ── DATA ── */
- const certs = [
+/* ── DATA ── */
+const certs = [
     { title: "2nd Place — BlackHat USA CTF 2025",    issuer: "BugCrowd",        date: "2025", img: "assets/images/certificates/bugcrowd.jpg" },
     { title: "VIGI Certified Security Administrator (VCSA)",            issuer: "VIGI",          date: "2026", img: "assets/images/certificates/Vigi.png" },
     { title: "IT Helpdesk Certificate ",            issuer: "HelpDesk Simulator",          date: "2026", img: "assets/images/certificates/helpdesk.png" },
@@ -20,7 +19,7 @@
 
 const projects = [
     { title: "Hidden Investigations Website",   desc: "Bangladesh's No. 1 CTF team website. Built with HTML, CSS, and JavaScript.", img: "assets/images/projects/hi.png",         url: "https://hiddeninvestigations.net/" },
-    { title: "Representative of WolrdSkills Philippines",   desc: "WorldSkills Philippines in Cybersecurity, we do real life hunting of bugs and bypasses", img: "assets/images/projects/worldskills.jpg"},
+    { title: "Representative of WorldSkills Philippines",   desc: "WorldSkills Philippines in Cybersecurity, we do real life hunting of bugs and bypasses", img: "assets/images/projects/worldskills.jpg"},
     { title: "AI-Based Phishing Email Analyzer",   desc: "This is a phishing analyzer that calculates of an email is suspicious and also intgrated with AI sumarization for efficient use for non-technical users.", img: 'assets/images/projects/phish.jpg', url: 'https://github.com/yazuu07/phishing-analyzer.git'},
     { title: "ReconSuite",   desc: "A URL reconnaissance detector to check vulnerabilities of a website. The tools are combination of all reconnaissance tools FFUF, WPScan, OSINT Search, and DNS Enumeration", img: "assets/images/projects/Recon.jpg", url: "https://github.com/yazuu07/ReconSuite.git"},
     { title: "A-Project", desc: "A lovestory driven game with conditional decisions", img: "assets/images/projects/A-project.png", url: "https://project-a-eta-two.vercel.app/"},
@@ -34,13 +33,52 @@ const projects = [
     { title: "Health Awareness Website",        desc: "A health awareness site built to accompany a client's thesis presentation.", img: "assets/images/projects/health.png",      url: "https://health-webdev.vercel.app/" },
 ];
 
+/* ═══════════════════════════════════════
+   LIGHTBOX (ZOOM-IN) LOGIC
+   ═══════════════════════════════════════ */
+function openLightbox(src, caption) {
+    const lb      = document.getElementById('lightbox');
+    const lbImg   = document.getElementById('lightboxImg');
+    const lbCap   = document.getElementById('lightboxCaption');
+    if (!lb) return;
+
+    lbImg.src = src;
+    lbCap.textContent = caption || '';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const lb = document.getElementById('lightbox');
+    if (!lb) return;
+    lb.classList.remove('open');
+    document.getElementById('lightboxImg').src = '';
+    // Only restore scroll if slide panel isn't also open
+    if (!document.getElementById('slidePanel').classList.contains('open')) {
+        document.body.style.overflow = '';
+    }
+}
+
+/* Attach zoom-in click to every .zoomable image (called after each render) */
+function attachZoom() {
+    document.querySelectorAll('img.zoomable').forEach(img => {
+        img.onclick = function (e) {
+            e.stopPropagation();   // prevent opening the slide panel
+            e.preventDefault();
+            openLightbox(this.src, this.alt || this.dataset.caption || '');
+        };
+    });
+}
+
 /* ── RENDER PREVIEW GRIDS (first 4 only) ── */
 function buildPreviews() {
     const certGrid = document.getElementById('certPreviewGrid');
+    certGrid.innerHTML = '';
     certs.slice(0, 4).forEach(c => {
         certGrid.innerHTML += `
             <div class="preview-card" onclick="openPanel('certs')">
-                <img src="${c.img}" alt="${c.title}" onerror="this.style.background='#2d2d2d';this.style.height='140px'">
+                <img class="zoomable" src="${c.img}" alt="${c.title}"
+                     onerror="this.style.background='#2d2d2d';this.style.height='140px'">
                 <div class="preview-card-body">
                     <div class="preview-card-title">${c.title}</div>
                     <div class="preview-card-sub">${c.issuer} · ${c.date}</div>
@@ -49,18 +87,21 @@ function buildPreviews() {
     });
 
     const projGrid = document.getElementById('projPreviewGrid');
+    projGrid.innerHTML = '';
     projects.slice(0, 4).forEach(p => {
         projGrid.innerHTML += `
             <div class="preview-card" onclick="openPanel('projects')">
-                <img src="${p.img}" alt="${p.title}" onerror="this.style.background='#2d2d2d';this.style.height='140px'">
+                <img class="zoomable" src="${p.img}" alt="${p.title}"
+                     onerror="this.style.background='#2d2d2d';this.style.height='140px'">
                 <div class="preview-card-body">
                     <div class="preview-card-title">${p.title}</div>
                     <div class="preview-card-sub">${p.desc.substring(0, 55)}…</div>
                 </div>
             </div>`;
     });
-}
 
+    attachZoom();
+}
 
 /* ── PANEL LOGIC ── */
 function openPanel(type) {
@@ -76,7 +117,8 @@ function openPanel(type) {
         certs.forEach(c => {
             body.innerHTML += `
                 <div class="panel-cert-item">
-                    <img class="panel-cert-thumb" src="${c.img}" alt="${c.title}" onerror="this.style.background='#2d2d2d'">
+                    <img class="panel-cert-thumb zoomable" src="${c.img}" alt="${c.title}"
+                         onerror="this.style.background='#2d2d2d'">
                     <div class="panel-cert-info">
                         <div class="panel-cert-title">${c.title}</div>
                         <div class="panel-cert-issuer">${c.issuer}</div>
@@ -89,7 +131,8 @@ function openPanel(type) {
         projects.forEach(p => {
             body.innerHTML += `
                 <div class="panel-project-item">
-                    <img class="panel-project-img" src="${p.img}" alt="${p.title}" onerror="this.style.background='#2d2d2d'">
+                    <img class="panel-project-img zoomable" src="${p.img}" alt="${p.title}"
+                         onerror="this.style.background='#2d2d2d'">
                     <div class="panel-project-body">
                         <div class="panel-project-title">${p.title}</div>
                         <div class="panel-project-desc">${p.desc}</div>
@@ -102,16 +145,24 @@ function openPanel(type) {
     panel.classList.add('open');
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
+
+    attachZoom();   // re-wire zoom clicks for panel images
 }
 
 function closePanel() {
     document.getElementById('slidePanel').classList.remove('open');
     document.getElementById('panelOverlay').classList.remove('open');
-    document.body.style.overflow = '';
+    if (!document.getElementById('lightbox').classList.contains('open')) {
+        document.body.style.overflow = '';
+    }
 }
 
+/* ── GLOBAL KEYS ── */
 document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closePanel();
+    if (e.key === 'Escape') {
+        closeLightbox();
+        closePanel();
+    }
 });
 
 buildPreviews();

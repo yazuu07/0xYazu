@@ -205,19 +205,32 @@
         <p>&copy; 2026 Nimrod T. Palomar III | Cybersecurity Enthusiast | All Rights Reserved</p>
         <p style="margin-top: 0.5rem; opacity: 0.5;">System Status: Online | Security Level: Pre-intermediate</p>
     </footer>
+
+    <!-- ═══ LIGHTBOX (NEW) ═══ -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">✕ Close</button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="" onclick="event.stopPropagation()">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
     <script>
         const cards = document.querySelectorAll('.skill-card');
 
-cards.forEach(card => {
-    const toggleHeader = card.querySelector('.card-toggle');
-    
-    toggleHeader.addEventListener('click', function(e) {
-        e.stopPropagation();
-        card.classList.toggle('active');
-    });
-});
+        cards.forEach(card => {
+            const toggleHeader = card.querySelector('.card-toggle');
 
+            toggleHeader.addEventListener('click', function(e) {
+                e.stopPropagation();
+                card.classList.toggle('active');
+            });
+        });
     </script>
     <script src="assets/scripts/script.js"></script>
+    <!-- ═══ LIGHTBOX (ZOOM-IN) ═══ -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="event.stopPropagation(); closeLightbox();">✕ Close</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="" onclick="event.stopPropagation()">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
 </body>
 </html>
